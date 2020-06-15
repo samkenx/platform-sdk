@@ -4,18 +4,10 @@ import { LedgerService } from "../../src/services/ledger";
 import { ledger } from "../__fixtures__/ledger";
 import { createConfig } from "../helpers";
 
-const createMockService = async (record: string, opts?: RecordStoreOptions) => {
-	const transport = await LedgerService.construct(
-		createConfig({
-			services: {
-				ledger: {
-					transport: createTransportReplayer(RecordStore.fromString(record, opts)),
-				},
-			},
-		}),
-	);
+const createMockService = async (record: string) => {
+	const transport = await LedgerService.construct(createConfig());
 
-	await transport.connect();
+	await transport.connect(createTransportReplayer(RecordStore.fromString(record)));
 
 	return transport;
 };

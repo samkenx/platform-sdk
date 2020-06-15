@@ -1,5 +1,5 @@
 export interface LedgerOptions {
-	transport: LedgerTransport;
+	transport: any;
 }
 
 export interface LedgerTransport {
@@ -19,7 +19,7 @@ export interface LedgerTransport {
 export interface LedgerService extends LedgerTransport {
 	destruct(): Promise<void>;
 
-	connect(): Promise<void>;
+	connect(transport): Promise<void>;
 
 	disconnect(): Promise<void>;
 }
