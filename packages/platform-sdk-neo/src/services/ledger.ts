@@ -2,7 +2,7 @@ import { Coins, Contracts, Exceptions } from "@arkecosystem/platform-sdk";
 import { BIP44 } from "@arkecosystem/platform-sdk-crypto";
 
 export class LedgerService implements Contracts.LedgerService {
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#bip44SessionPath: string;
 
 	private constructor() {
@@ -17,8 +17,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.create();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 	}
 
 	public async disconnect(): Promise<void> {
@@ -94,7 +94,7 @@ export class LedgerService implements Contracts.LedgerService {
 	 * - https://github.com/CityOfZion/neon-js/blob/master/packages/neon-ledger/src/main.ts.ts
 	 */
 	private async neoSignTransaction(
-		transport: Contracts.LedgerTransport,
+		transport: Contracts.Ledger,
 		path: string,
 		payload: Buffer,
 	): Promise<string> {

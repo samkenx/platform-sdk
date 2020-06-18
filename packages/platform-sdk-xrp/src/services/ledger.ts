@@ -3,7 +3,7 @@ import Ripple from "@ledgerhq/hw-app-xrp";
 
 export class LedgerService implements Contracts.LedgerService {
 	#config: Coins.Config;
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#transport!: Ripple;
 
 	private constructor(config: Coins.Config) {
@@ -18,8 +18,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.open();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 		this.#transport = new Ripple(this.#ledger);
 	}
 

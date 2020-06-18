@@ -3,7 +3,7 @@ import { BIP44 } from "@arkecosystem/platform-sdk-crypto";
 import { CommHandler, DposLedger, LedgerAccount, SupportedCoin } from "dpos-ledger-api";
 
 export class LedgerService implements Contracts.LedgerService {
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#transport!: DposLedger;
 
 	public static async construct(config: Coins.Config): Promise<LedgerService> {
@@ -14,8 +14,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.open();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 		// @ts-ignore
 		this.#transport = new DposLedger(new CommHandler(this.#ledger));
 	}

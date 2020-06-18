@@ -14,13 +14,7 @@ const createMockService = async (record: string, opts?: RecordStoreOptions) => {
 
 describe("constructor", () => {
 	it("should pass with an empty configuration", async () => {
-		const transport = await LedgerService.construct(
-			createConfig({
-				services: {
-					ledger: {},
-				},
-			}),
-		);
+		const transport = await LedgerService.construct(createConfig());
 
 		expect(transport).toBeInstanceOf(LedgerService);
 	});

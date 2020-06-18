@@ -9,7 +9,7 @@ export class LedgerService implements Contracts.LedgerService {
 		//
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
 		//
 	}
 

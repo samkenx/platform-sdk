@@ -3,7 +3,7 @@ import { BIP44 } from "@arkecosystem/platform-sdk-crypto";
 import Cosmos from "ledger-cosmos-js";
 
 export class LedgerService implements Contracts.LedgerService {
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#transport!: Cosmos;
 
 	public static async construct(config: Coins.Config): Promise<LedgerService> {
@@ -14,8 +14,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.create();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 		this.#transport = new Cosmos(this.#ledger);
 	}
 

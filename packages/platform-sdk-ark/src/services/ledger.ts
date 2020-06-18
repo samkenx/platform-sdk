@@ -2,7 +2,7 @@ import { ARKTransport } from "@arkecosystem/ledger-transport";
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 
 export class LedgerService implements Contracts.LedgerService {
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#transport!: ARKTransport;
 
 	public static async construct(config: Coins.Config): Promise<LedgerService> {
@@ -13,8 +13,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.open();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 		this.#transport = new ARKTransport(this.#ledger);
 	}
 

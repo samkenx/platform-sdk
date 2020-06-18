@@ -1,14 +1,10 @@
-export interface LedgerOptions {
-	transport: LedgerTransport;
-}
-
 // TODO: create a proper contract for this
-export type LedgerTransport = any;
+export type Ledger = any;
 
 export interface LedgerService {
 	destruct(): Promise<void>;
 
-	connect(transport: LedgerTransport): Promise<void>;
+	connect(ledger: Ledger): Promise<void>;
 
 	disconnect(): Promise<void>;
 

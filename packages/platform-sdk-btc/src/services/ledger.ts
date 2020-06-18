@@ -4,7 +4,7 @@ import { getAppAndVersion } from "@ledgerhq/hw-app-btc/lib/getAppAndVersion";
 import { serializeTransactionOutputs } from "@ledgerhq/hw-app-btc/lib/serializeTransaction";
 
 export class LedgerService implements Contracts.LedgerService {
-	#ledger: Contracts.LedgerTransport;
+	#ledger: Contracts.Ledger;
 	#transport!: Bitcoin;
 
 	public static async construct(config: Coins.Config): Promise<LedgerService> {
@@ -15,8 +15,8 @@ export class LedgerService implements Contracts.LedgerService {
 		await this.disconnect();
 	}
 
-	public async connect(transport: Contracts.LedgerTransport): Promise<void> {
-		this.#ledger = await transport.create();
+	public async connect(ledger: Contracts.Ledger): Promise<void> {
+		this.#ledger = ledger;
 		this.#transport = new Bitcoin(this.#ledger);
 	}
 
