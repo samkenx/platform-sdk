@@ -66,3 +66,7 @@ it("should have an toObject", () => {
 		},
 	});
 });
+
+it("should have a formatted name", () => {
+	expect(subject.formattedName()).toBe("DARK - Devnet");
+});

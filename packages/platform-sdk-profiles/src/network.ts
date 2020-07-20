@@ -44,4 +44,12 @@ export class NetworkData {
 	public toObject(): Coins.CoinNetwork {
 		return this.#network;
 	}
+
+	/**
+	 * These methods are purely for UI purposes and might be removed at any time.
+	 */
+
+	public formattedName(): string {
+		return `${this.ticker()} - ${this.name()}`;
+	}
 }
