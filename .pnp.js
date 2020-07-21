@@ -1337,6 +1337,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@arkecosystem/platform-sdk-markets", "workspace:packages/platform-sdk-markets"],
             ["@arkecosystem/platform-sdk-support", "workspace:packages/platform-sdk-support"],
             ["@arkecosystem/utils", "npm:1.1.8"],
+            ["@rematch/core", "npm:1.4.0"],
             ["@sindresorhus/tsconfig", "npm:0.7.0"],
             ["@types/async", "npm:3.2.3"],
             ["@types/dot-prop", "npm:5.0.1"],
@@ -1346,6 +1347,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/mersenne-twister", "npm:1.1.2"],
             ["@types/node", "npm:14.0.23"],
             ["@types/prettier", "npm:2.0.2"],
+            ["@types/react", "npm:16.9.43"],
             ["@types/rimraf", "npm:3.0.0"],
             ["@types/semver", "npm:7.3.1"],
             ["@types/uuid", "npm:8.0.0"],
@@ -1369,6 +1371,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nock", "npm:13.0.2"],
             ["npm-check-updates", "npm:7.0.2"],
             ["prettier", "npm:2.0.5"],
+            ["react", "npm:16.13.1"],
             ["rimraf", "npm:3.0.2"],
             ["semver", "npm:7.3.2"],
             ["ts-jest", "virtual:718d81ccdbea80d009ddf282815e1ddbae06dbd32b8310b5d294f48a2ed35e0698a5a02342ad7ebeaf2437a4d1197a11431303cd29d3daf770c5a7253eeda45f#npm:26.1.3"],
@@ -4086,6 +4089,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@rematch/core", [
+        ["npm:1.4.0", {
+          "packageLocation": "./.yarn/cache/@rematch-core-npm-1.4.0-75007b76fc-2.zip/node_modules/@rematch/core/",
+          "packageDependencies": [
+            ["@rematch/core", "npm:1.4.0"],
+            ["redux", "npm:4.0.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@sindresorhus/is", [
         ["npm:0.14.0", {
           "packageLocation": "./.yarn/cache/@sindresorhus-is-npm-0.14.0-9f906ea34b-2.zip/node_modules/@sindresorhus/is/",
@@ -4904,6 +4917,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/prop-types", [
+        ["npm:15.7.3", {
+          "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.3-084e0015c6-2.zip/node_modules/@types/prop-types/",
+          "packageDependencies": [
+            ["@types/prop-types", "npm:15.7.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/qrcode", [
         ["npm:1.3.4", {
           "packageLocation": "./.yarn/cache/@types-qrcode-npm-1.3.4-efadf7946d-2.zip/node_modules/@types/qrcode/",
@@ -4920,6 +4942,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/randombytes", "npm:2.0.0"],
             ["@types/node", "npm:13.13.4"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/react", [
+        ["npm:16.9.43", {
+          "packageLocation": "./.yarn/cache/@types-react-npm-16.9.43-ffdd276940-2.zip/node_modules/@types/react/",
+          "packageDependencies": [
+            ["@types/react", "npm:16.9.43"],
+            ["@types/prop-types", "npm:15.7.3"],
+            ["csstype", "npm:2.6.11"]
           ],
           "linkType": "HARD",
         }]
@@ -8759,6 +8792,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["cssstyle", "npm:2.3.0"],
             ["cssom", "npm:0.3.8"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["csstype", [
+        ["npm:2.6.11", {
+          "packageLocation": "./.yarn/cache/csstype-npm-2.6.11-77160fd1b8-2.zip/node_modules/csstype/",
+          "packageDependencies": [
+            ["csstype", "npm:2.6.11"]
           ],
           "linkType": "HARD",
         }]
@@ -19089,6 +19131,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["prop-types", [
+        ["npm:15.7.2", {
+          "packageLocation": "./.yarn/cache/prop-types-npm-15.7.2-d7a04f2274-2.zip/node_modules/prop-types/",
+          "packageDependencies": [
+            ["prop-types", "npm:15.7.2"],
+            ["loose-envify", "npm:1.4.0"],
+            ["object-assign", "npm:4.1.1"],
+            ["react-is", "npm:16.13.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["propagate", [
         ["npm:2.0.1", {
           "packageLocation": "./.yarn/cache/propagate-npm-2.0.1-2074bf76d3-2.zip/node_modules/propagate/",
@@ -19448,6 +19502,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["react", [
+        ["npm:16.13.1", {
+          "packageLocation": "./.yarn/cache/react-npm-16.13.1-56d408860d-2.zip/node_modules/react/",
+          "packageDependencies": [
+            ["react", "npm:16.13.1"],
+            ["loose-envify", "npm:1.4.0"],
+            ["object-assign", "npm:4.1.1"],
+            ["prop-types", "npm:15.7.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["react-is", [
         ["npm:16.13.1", {
           "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-2.zip/node_modules/react-is/",
@@ -19568,6 +19634,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["rechoir", "npm:0.6.2"],
             ["resolve", "patch:resolve@npm%3A1.17.0#builtin<compat/resolve>::version=1.17.0&hash=e7677c"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["redux", [
+        ["npm:4.0.5", {
+          "packageLocation": "./.yarn/cache/redux-npm-4.0.5-aca53e621f-2.zip/node_modules/redux/",
+          "packageDependencies": [
+            ["redux", "npm:4.0.5"],
+            ["loose-envify", "npm:1.4.0"],
+            ["symbol-observable", "npm:1.2.0"]
           ],
           "linkType": "HARD",
         }]
@@ -21535,6 +21612,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["setimmediate", "npm:1.0.5"],
             ["tar", "npm:4.4.13"],
             ["xhr-request", "npm:1.1.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["symbol-observable", [
+        ["npm:1.2.0", {
+          "packageLocation": "./.yarn/cache/symbol-observable-npm-1.2.0-9e812a0a39-2.zip/node_modules/symbol-observable/",
+          "packageDependencies": [
+            ["symbol-observable", "npm:1.2.0"]
           ],
           "linkType": "HARD",
         }]

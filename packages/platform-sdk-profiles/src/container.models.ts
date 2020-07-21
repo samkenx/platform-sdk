@@ -7,6 +7,7 @@ export const Identifiers = {
 	Migrator: "Migrator",
 	ProfileRepository: "ProfileRepository",
 	SettingRepository: "SettingRepository",
+	State: "State",
 	Storage: "Storage",
 	WalletRepository: "WalletRepository",
 };
