@@ -69,6 +69,8 @@ export class MultiSignatureService implements Contracts.MultiSignatureService {
 			return this.#config.get<string>("peerMultiSignature");
 		}
 
-		return Arr.randomElement(this.#config.get<Coins.CoinNetwork>("network").hosts);
+		throw new Error(
+			"No MultiSignature peer has been provided. Please provide it if you wish to use MultiSignature features.",
+		);
 	}
 }
