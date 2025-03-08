@@ -20,7 +20,7 @@
     },
     "dependencies": {
         "@arkecosystem/platform-sdk": "workspace:packages/platform-sdk",
-        "axios": "^0.20.0"
+        "axios": "^1.8.2"
     },
     "devDependencies": {
         "@sindresorhus/tsconfig": "^0.7.0",
